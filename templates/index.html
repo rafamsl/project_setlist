@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Step 1: Select Your Songs{% endblock %}
+{% block content %}
+  <h1 class="mb-3">Step 1: Select Your Songs</h1>
+
+  <p class="lead">
+    This tool will help you create a brand-new Spotify playlist 
+    from a setlist found on <strong>setlist.fm</strong>.
+  </p>
+
+  <p class="mb-4">
+    First, paste the setlist.fm link so we can parse the songs. 
+  </p>
+
+  <!-- Button to proceed to parse-setlist -->
+  <a class="btn btn-primary btn-lg" href="/parse-setlist">
+    Add a Setlist.fm Link
+  </a>
+{% endblock %}

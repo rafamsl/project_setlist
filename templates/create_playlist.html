@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Playlist Created{% endblock %}
+{% block content %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Success!</h4>
+  <p>
+    Your playlist has been created. You can open it in Spotify below:
+  </p>
+  <hr/>
+  <a href="{{ playlist_url }}" target="_blank" class="btn btn-primary">
+    Open in Spotify
+  </a>
+</div>
+{% endblock %}

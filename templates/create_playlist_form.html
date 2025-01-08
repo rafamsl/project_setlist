@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Confirm Playlist Creation{% endblock %}
+{% block content %}
+
+<h1 class="mb-3">Create Your Playlist</h1>
+<p class="mb-4">
+  Below are the songs we will add. You can rename the playlist or proceed as-is.
+</p>
+
+<ul class="list-group mb-4">
+  {% for song in songs %}
+  <li class="list-group-item">{{ song }}</li>
+  {% endfor %}
+</ul>
+
+<form action="/create-playlist" method="POST">
+  <div class="mb-3">
+    <label for="playlist_name" class="form-label">Playlist Name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="playlist_name"
+      name="playlist_name"
+      placeholder="My Setlist Playlist"
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Create Playlist</button>
+</form>
+
+{% endblock %}

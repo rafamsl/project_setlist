@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Add a Setlist.fm Link{% endblock %}
+{% block content %}
+  <h1 class="mb-3">Step 1: Select Your Songs</h1>
+  
+  <p>
+    Paste your <strong>setlist.fm</strong> URL below. We'll parse it 
+    and show you the songs in the next step.
+  </p>
+  
+  <form method="post" class="mt-4">
+    <div class="mb-3">
+      <label for="setlist_url" class="form-label">Setlist.fm URL:</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="setlist_url" 
+        name="setlist_url" 
+        placeholder="e.g. https://www.setlist.fm/setlist/..." 
+        required>
+    </div>
+    <button type="submit" class="btn btn-primary">Parse Setlist</button>
+  </form>
+{% endblock %}

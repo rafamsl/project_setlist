@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Step 2: Confirm Your Songs{% endblock %}
+{% block content %}
+  <h1 class="mb-3">Step 2: Confirm Your Songs</h1>
+
+  <p class="mb-4">
+    Here are the songs we parsed from setlist.fm. Please review them 
+    before proceeding.
+  </p>
+
+  <ul class="list-group mb-4">
+    {% for song in songs %}
+      <li class="list-group-item">{{ song }}</li>
+    {% endfor %}
+  </ul>
+
+  <p class="mb-4">
+    Next, you'll need to <strong>Login to Spotify (Step 3)</strong>, then 
+    we will create your playlist (Step 4).
+  </p>
+
+  <!-- Optionally, you could add a direct "Login to Spotify" button here:
+       <a class="btn btn-success mb-3" href="/login">Login to Spotify</a>
+   -->
+
+  <form method="post" action="/create-playlist" class="mb-3">
+    <div class="mb-3">
+      <label for="playlist_name" class="form-label">Playlist Name:</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="playlist_name" 
+        name="playlist_name" 
+        required>
+    </div>
+    <button type="submit" class="btn btn-success">
+      Create Playlist (Steps 3 &amp; 4)
+    </button>
+  </form>
+
+  <!-- If user wants to re-check or change the setlist URL -->
+  <form action="/parse-setlist" method="get">
+    <button type="submit" class="btn btn-secondary">Edit Setlist</button>
+  </form>
+{% endblock %}
